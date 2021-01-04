@@ -1,0 +1,36 @@
+[
+	{
+		"title": "Facebook Messenger Tutorial",
+		"items": [
+			{
+				"title": "Facebook Messenger Flow - Send Message step",
+				"description": "This video will show you the ’send message‘ step of the Facebook Messenger Flow in UChat's flow builder. Get started free https://www.uchat.com.au",
+				"image": "public/img/video-img/flow-builder/Facebook Messenger Flow - Send Message Step.png",
+				"video": "https://www.youtube.com/embed/uwDmCijiWt8"
+			},
+			{
+				"title": "Facebook Messenger Flow - Question step",
+				"description": "This video will show you the 'question' step of the Facebook Messenger Flow in UChat's flow builder. Get started free https://www.uchat.com.au",
+				"image": "public/img/video-img/flow-builder/Facebook Messenger Flow - Question Step.png",
+				"video": "https://www.youtube.com/embed/Olm7Z_yRMlU"
+			}
+		]
+	},
+	{
+		"title": "WeChat Tutorial",
+		"items": [
+			{
+				"title": "WeChat Flow - Send Message Step",
+				"description": "This video will show you the 'send message' step of the WeChat Flow in our flow builder. Get started free https://www.uchat.com.au",
+				"image": "public/img/video-img/flow-builder/WeChat Flow - Send Message Step.png",
+				"video": "https://www.youtube.com/embed/KhHMkdj52SU"
+			},
+			{
+				"title": "WeChat Flow - Question Step",
+				"description": "This video will show you the 'question' step of the WeChat Flow in our flow builder. Get started free https://www.uchat.com.au",
+				"image": "public/img/video-img/flow-builder/WeChat Flow - Question Step.png",
+				"video": "https://www.youtube.com/embed/yErD9nfJvzo&t=1s"
+            }
+		]
+	}
+]

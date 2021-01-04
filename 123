@@ -1,0 +1,16 @@
+<div class='col-12 col-md-4 btn popup-modal' data-toggle='modal' data-target='#myModal'
+                    href='#headerPopup' id='headerVideoLink'>
+                    <div class='single-special  wow fadeInUp' data-wow-delay='0.2s'>
+                        <div class='single-icon'>
+                            <img class='tutorial-cover'
+                                src='public/img/video-img/Flow Builder - Steps in WhatsApp Flow.png'>
+                        </div>
+                        <h4>WhatsApp Flow Tutorial</h4>
+                        <p>Learn how to build a WhatsApp chatbot</p>
+                        <div id='headerPopup' class='mfp-hide embed-responsive embed-responsive-21by9'>
+                            <iframe class='embed-responsive-item' width='854' height='480'
+                                src='https://www.youtube.com/embed/qN3OueBm9F4?autoplay=1' frameborder='0'
+                                allow='autoplay; encrypted-media' allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
