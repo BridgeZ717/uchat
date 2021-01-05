@@ -269,25 +269,32 @@
             })
             .then(function (data) {
                 var text = "";
+                var funCount = [];//this is for video popup function
                 for (i = 0; i < data.length; i++) {
                     text += "<div class='section-heading text-center'><h2>" + data[i].title + "</h2></div>";//Header for each platform
                     var videoRow = Math.ceil(data[i].items.length / 3);//calculate how many rows needed in each part
                     for (videoRow; videoRow > 0; videoRow--) {
                         text += "<div class='row'>";
                         for (j = 0; j < data[i].items.length; j++) {
-                            text += "<div class='col-12 col-md-4 popup-modal' data-toggle='modal' data-target='#myModal' href='#headerPopup' id='headerVideoLink'> <div class='single-special  wow fadeInUp' data-wow-delay='0.2s'> <div class='single-icon'> <img class='tutorial-cover'src='" + data[i].items[j].image + "'></div> <h4>" + data[i].items[j].title + "</h4> <p>" + data[i].items[j].description + "</p> <div id='headerPopup' class='mfp-hide embed-responsive embed-responsive-21by9'>  <iframe class='embed-responsive-item' width='854' height='480' src='" + data[i].items[j].video + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe> </div></div> </div>";
+                            text += "<div class='col-12 col-md-4 popup-modal' id='headerVideoLink" + i + "" + j + "' data-toggle='modal' data-target='#myModal' href='#headerPopup" + i + "" + j + "'> <div class='single-special  wow fadeInUp' data-wow-delay='0.2s'> <div class='single-icon'> <img class='tutorial-cover'src='" + data[i].items[j].image + "'></div> <h4>" + data[i].items[j].title + "</h4> <p>" + data[i].items[j].description + "</p> <div id='headerPopup" + i + "" + j + "' class='mfp-hide embed-responsive embed-responsive-21by9'>  <iframe class='embed-responsive-item' width='854' height='480' src='" + data[i].items[j].video + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe> </div></div> </div>";
+                            console.log(i + "" + j + "Link: " + data[i].items[j].video);
+                            var num = i + "" + j;
+                            funCount.push(num);
+                            console.log("num" + funCount);
                         }
                         text += "</div>";
                     }
-
                 }
-                //document.getElementById('video-container').innerHTML=text;
+                console.log(text);
                 $(document).ready(function () {
                     $("#video-container").html(text)
-                    $('#headerVideoLink').magnificPopup({
-                        type: 'inline',
-                        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-                    });
+                    for (i = 0; i < funCount.length; i++) {
+                        $('#headerVideoLink' + funCount[i]).magnificPopup({
+                            type: 'inline',
+                            midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+                        });
+                        console.log('loop count')
+                    }
                 });
             });
     </script>
