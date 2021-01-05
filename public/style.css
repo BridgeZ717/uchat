@@ -1507,5 +1507,11 @@ p {
     width:100%;
     margin:0 auto;
   }
+    .mfp-close-btn-in .mfp-close
+    {
+        color:#fff;
+    }
 
-  .popup-modal:hover { cursor: pointer; }
+    .mfp-container{
+        padding: 0 10%
+    }
