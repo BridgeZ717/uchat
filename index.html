@@ -381,93 +381,7 @@
                     <h2>Frequently Asked Questions</h2>
                     <div class="line-shape"></div>
                 </div>
-                <div id="accordion">
-                    <div class="card">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
-                            <div class="card-header text-left" id="headingOne">
-                                <h5 class="mb-0">
-                                    <h2>What is a Facebook Messenger bot?</h2>
-                                </h5>
-                            </div>
-                        </button>
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                            <div class="card-body">
-                                <p>A bot is a a series of automated conversations that can answer common questions from
-                                    your
-                                    customers over Facebook Messenger.
-                                    This could be to explain what your product or service does, gather information about
-                                    the
-                                    customer, deliver helpful content,
-                                    or nurture them towards a sale.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
-                            aria-expanded="true" aria-controls="collapseTwo">
-                            <div class="card-header text-left" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <h2>What can a bot do for my business?</h2>
-                                </h5>
-                            </div>
-                        </button>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                            <div class="card-body">
-                                <p>Our bots allow you to automatically welcome new users, send them content, schedule
-                                    messages,
-                                    respond to specific keywords,
-                                    and much more.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree"
-                            aria-expanded="true" aria-controls="collapseThree">
-                            <div class="card-header text-left" id="headingThree">
-                                <h5 class="mb-0">
-                                    <h2>Why do I need a Messenger bot?</h2>
-                                </h5>
-                            </div>
-                        </button>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                            data-parent="#accordion">
-                            <div class="card-body">
-                                <p>Every day it’s becoming harder to reach your audience.
-                                    People open less email and social media is so noisy your organic reach is often less
-                                    than 10% of
-                                    your audience.
-                                    Facebook Messenger bots solve this problem by providing personalized and automated
-                                    conversations
-                                    with your customers.
-                                    It is real-time, interactive, and has 80% open rates.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour"
-                            aria-expanded="true" aria-controls="collapseFour">
-                            <div class="card-header text-left" id="headingFour">
-                                <h5 class="mb-0">
-                                    <h2>How do I create a Messenger bot?</h2>
-                                </h5>
-                            </div>
-                        </button>
-                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                            <div class="card-body">
-                                <p>You’ll need an existing Facebook Page and administrator rights to manage it.
-                                    After that click on the "Get Started Free" button at the top of the page.
-                                    <br>While you need a Facebook Page to get started, Your chatbot is not restricted to
-                                    just
-                                    customers on your Facebook page.
-                                    Anywhere your customers can click a link - your Website, in an email, on a QR code,
-                                    etc.,
-                                    you can launch your chatbot and start a conversation.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div id="accordion"> </div>
             </div>
         </div>
     </section>
@@ -586,6 +500,24 @@
             $("#header").load("header.html");
             $("#footer").load("footer.html");
         });
+    </script>
+    <!-- Json loader and Popup Function -->
+    <script>
+        fetch("public/json/faq.json")
+            .then(function (resp) {
+                return resp.json();
+            })
+            .then(function (data) {
+                console.log(data);
+                var text = "";
+                for (i = 0; i < data.length; i++) {
+                    text += "<div class='card'> <button class='btn btn-link' data-toggle='collapse' data-target='#collapse"+i+"' aria-expanded='true' aria-controls='collapse"+i+"'> <div class='card-header text-left' id='heading"+i+"'><h5 class='mb-0'> <h2>"+data[i].title+"</h2></h5></div></button>";
+                    text +=" <div id='collapse"+i+"' class='collapse' aria-labelledby='heading"+i+"' data-parent='#accordion'><div class='card-body'><p>"+data[i].description+"</p> </div></div></div>";
+                }
+                $(document).ready(function () {
+                    $("#accordion").html(text)
+                });
+            });
     </script>
 </body>
 

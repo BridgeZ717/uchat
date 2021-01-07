@@ -103,15 +103,13 @@
                         text += "<div class='row'>";
                         for (j = 0; j < data[i].items.length; j++) {
                             text += "<div class='col-12 col-md-4 popup-modal' id='headerVideoLink" + i + "" + j + "' data-toggle='modal' data-target='#myModal' href='#headerPopup" + i + "" + j + "'> <div class='single-special  wow fadeInUp' data-wow-delay='0.2s'> <div class='single-icon'> <img class='tutorial-cover'src='" + data[i].items[j].image + "'></div> <h4>" + data[i].items[j].title + "</h4> <p>" + data[i].items[j].description + "</p> <div id='headerPopup" + i + "" + j + "' class='mfp-hide embed-responsive embed-responsive-21by9'>  <iframe class='embed-responsive-item' width='560' height='315' src='" + data[i].items[j].video + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe> </div></div> </div>";
-                            console.log(i + "" + j + "Link: " + data[i].items[j].video);
                             var num = i + "" + j;
                             funCount.push(num);
-                            console.log("num" + funCount);
                         }
                         text += "</div>";
                     }
                 }
-                console.log(text);
+
                 $(document).ready(function () {
                     $("#video-container").html(text)
                     for (i = 0; i < funCount.length; i++) {
@@ -119,7 +117,6 @@
                             type: 'inline',
                             midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
                         });
-                        console.log('loop count')
                     }
                 });
             });
