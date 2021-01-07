@@ -1485,7 +1485,9 @@ p {
     background-color:transparent;
     border-bottom: 0px;
 }
-
+.btn-link{
+    white-space: normal;
+}
 .btn-link:hover{
     color:#fff;
 }

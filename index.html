@@ -508,7 +508,6 @@
                 return resp.json();
             })
             .then(function (data) {
-                console.log(data);
                 var text = "";
                 for (i = 0; i < data.length; i++) {
                     text += "<div class='card'> <button class='btn btn-link' data-toggle='collapse' data-target='#collapse"+i+"' aria-expanded='true' aria-controls='collapse"+i+"'> <div class='card-header text-left' id='heading"+i+"'><h5 class='mb-0'> <h2>"+data[i].title+"</h2></h5></div></button>";
