@@ -1,16 +1,21 @@
-<div class='col-12 col-md-4 btn popup-modal' data-toggle='modal' data-target='#myModal'
-                    href='#headerPopup' id='headerVideoLink'>
-                    <div class='single-special  wow fadeInUp' data-wow-delay='0.2s'>
-                        <div class='single-icon'>
-                            <img class='tutorial-cover'
-                                src='public/img/video-img/Flow Builder - Steps in WhatsApp Flow.png'>
-                        </div>
-                        <h4>WhatsApp Flow Tutorial</h4>
-                        <p>Learn how to build a WhatsApp chatbot</p>
-                        <div id='headerPopup' class='mfp-hide embed-responsive embed-responsive-21by9'>
-                            <iframe class='embed-responsive-item' width='854' height='480'
-                                src='https://www.youtube.com/embed/qN3OueBm9F4?autoplay=1' frameborder='0'
-                                allow='autoplay; encrypted-media' allowfullscreen></iframe>
+<div class='card'>
+                        <button class='btn btn-link' data-toggle='collapse' data-target='#collapseOne'
+                            aria-expanded='true' aria-controls='collapseOne'>
+                            <div class='card-header text-left' id='headingOne'>
+                                <h5 class='mb-0'>
+                                    <h2>What is a Facebook Messenger bot?</h2>
+                                </h5>
+                            </div>
+                        </button>
+                        <div id='collapseOne' class='collapse' aria-labelledby='headingOne' data-parent='#accordion'>
+                            <div class='card-body'>
+                                <p>A bot is a a series of automated conversations that can answer common questions from
+                                    your
+                                    customers over Facebook Messenger.
+                                    This could be to explain what your product or service does, gather information about
+                                    the
+                                    customer, deliver helpful content,
+                                    or nurture them towards a sale.</p>
+                            </div>
                         </div>
                     </div>
-                </div>

@@ -1,0 +1,35 @@
+[
+    {
+        "title": "Seller.Tools",
+        "description":"Send SMS and verify phone numbers using SMS.to",
+        "img":"https://thumb.tildacdn.com/tild3539-6464-4531-b936-636531643232/-/resize/360x/-/format/webp/SMS_1.png",
+        "dataOriginal":"https://static.tildacdn.com/tild3539-6464-4531-b936-636531643232/SMS_1.png"
+    },
+    {
+        "title": "Send SMS",
+        "description":"Integrate your Seller.Tools account with ManyChat to unlock your Amazon data and automate your FBA business.",
+        "img":"https://thumb.tildacdn.com/tild6230-3334-4131-b861-663936383261/-/resize/360x/-/format/webp/SellerTools_1.png",
+        "dataOriginal":"https://static.tildacdn.com/tild6230-3334-4131-b861-663936383261/SellerTools_1.png"
+    },    {
+        "title": "Messenger Sales Kit for Shopify",
+        "description":"Increase sales with real-time, driven integration with your Shopify store.",
+        "img":"https://thumb.tildacdn.com/tild6163-3163-4337-b431-326363313733/-/resize/360x/-/format/webp/PSCA_1.png",
+        "dataOriginal":"https://static.tildacdn.com/tild6163-3163-4337-b431-326363313733/PSCA_1.png"
+    },    {
+        "title": "Walletly",
+        "description":"Add all of your Walletly campaigns directly to ManyChat flow builder.",
+        "img":"https://thumb.tildacdn.com/tild6131-6534-4137-a437-313066663633/-/resize/360x/-/format/webp/Walletly_1.png",
+        "dataOriginal":"https://static.tildacdn.com/tild6131-6534-4137-a437-313066663633/Walletly_1.png"
+    },    {
+        "title": "Botsheets",
+        "description":"Use Botsheets Actions to read data from a Google Sheet and instantly generate dynamic content for Messenger.",
+        "img":"https://thumb.tildacdn.com/tild3439-6361-4139-a136-373330363238/-/resize/360x/-/format/webp/Botsheets_1.png",
+        "dataOriginal":"https://static.tildacdn.com/tild3439-6361-4139-a136-373330363238/Botsheets_1.png"
+    },
+    {
+        "title": "Home Evaluation using Zillow",
+        "description":"It has never been easier to get home value estimates than with this easy to use flowbuilderaction.",
+        "img":"https://thumb.tildacdn.com/tild3838-3863-4539-a232-616362323339/-/resize/360x/-/format/webp/Home_Evaluation_App_.png",
+        "dataOriginal":"https://static.tildacdn.com/tild3838-3863-4539-a232-616362323339/Home_Evaluation_App_.png"
+    }
+]
