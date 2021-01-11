@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description"
-        content="Increase sales, reduce costs, and automate support on Facebook We offer you everything to launch your shop on Messenger in minutes.">
+    <meta name="description" content="Increase sales, reduce costs, and automate support on Facebook We offer you everything to launch your shop on Messenger in minutes.">
     <meta name="csrf-token" content="pM6GgVj0uhkDQwTqHpsHPNHX30ErRjiLgEnAKwlP">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -84,31 +83,40 @@
     <script src="public/js/active.js"></script>
     <!-- Footer & Navbar -->
     <script>
-        $(function () {
+        $(function() {
             $("#header").load("header.html");
             $("#footer").load("footer.html");
         });
     </script>
     <!-- Json loader and innerHTML Function -->
     <script>
-        fetch("public/json/app.json")
-            .then(function (resp) {
-                return resp.json();
+        var settings = {
+            "url": "https://www.uchat.com.au/apps/list",
+            "method": "POST",
+            "headers": {
+                "Accept": "application/json"
+            },
+        };
+        $.ajax(settings).done(function(response) {
+                console.log(response);
             })
-            .then(function (data) {
+            .then(function(data) {
+                console.log(data);
                 var text = "";
                 var i = 0;
-                var row = Math.ceil(data.length / 3);//calculate how many rows needed in each part
+                var row = Math.ceil(data.data.length / 3); //calculate how many rows needed in each part
                 for (row; row > 0; row--) {
+                    console.log("inside")
                     text += "<div class='row'>";
-                        for(k = 0; k < 3; k++){
-                            if(i<data.length){
-                                text += "<div class='col-12 col-md-4'><div class='single-special  wow fadeInUp' data-wow-delay='0.2s'><div class='single-icon'><img src='" + data[i].img + "'data-original='" + data[i].dataOriginal + "'class='t829__img t-img js-product-img loaded' imgfield='li_img__1521103691910'></div><h4>" + data[i].title + "</h4><p>" + data[i].description + "</p><div class='learn-more-button d-none d-lg-block'><a href='' class='px-4'>Learn More</a></div></div>"
+                    for (k = 0; k < 3; k++) {
+                        if (i < data.data.length) {
+                            text += "<div class='col-12 col-md-4'><div class='single-special  wow fadeInUp' data-wow-delay='0.2s'><div class='single-icon'><img src='" + data.data[i].logo + "'data-original='" + data.data[i].url + "'class='t829__img t-img js-product-img loaded' imgfield='li_img__1521103691910'></div><h4>" + data.data[i].title + "</h4><p>" + data.data[i].intro + "</p><div class='learn-more-button d-none d-lg-block'><a href='' class='px-4'>Learn More</a></div></div>"
                             i++;
-                            }
-                            text += "</div>";
+                            console.log("inside")
                         }
-                    $(document).ready(function () {
+                        text += "</div>";
+                    }
+                    $(document).ready(function() {
                         $("#card").html(text)
                     });
                 }
