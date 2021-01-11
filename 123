@@ -1,21 +1,19 @@
-<div class='card'>
-                        <button class='btn btn-link' data-toggle='collapse' data-target='#collapseOne'
-                            aria-expanded='true' aria-controls='collapseOne'>
-                            <div class='card-header text-left' id='headingOne'>
-                                <h5 class='mb-0'>
-                                    <h2>What is a Facebook Messenger bot?</h2>
-                                </h5>
+<div class='col-12 col-md-4'>
+                                <div class='single-team-member wow fadeInUp' data-wow-delay='0.2s'>
+                                    <div class='member-image'>
+                                        <img src='"+ data[i].img +"' alt='Wechat Template' class='border'>
+                                        <div class='team-hover-effects'>
+                                            <div class='team-social-icon'>
+                                                <div>
+                                                    <a href='"+ data[i].install +"' class='w-100 btn btn-primary d-block'>Install Template</a>
+                                                    <a href='"+ data[i].viewMore +"' class='w-100 btn btn-primary d-block mt-2'>View More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='member-text'>
+                                        <h5><a href='"+ data[i].viewMore +"'>"+ data[i].title +"</a></h5>
+                                        <p></p>
+                                    </div>
+                                </div>
                             </div>
-                        </button>
-                        <div id='collapseOne' class='collapse' aria-labelledby='headingOne' data-parent='#accordion'>
-                            <div class='card-body'>
-                                <p>A bot is a a series of automated conversations that can answer common questions from
-                                    your
-                                    customers over Facebook Messenger.
-                                    This could be to explain what your product or service does, gather information about
-                                    the
-                                    customer, deliver helpful content,
-                                    or nurture them towards a sale.</p>
-                            </div>
-                        </div>
-                    </div>
