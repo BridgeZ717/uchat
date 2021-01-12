@@ -77,138 +77,8 @@
             </ul>
 
             <!-- Tab panes -->
-            <div class="tab-content">
-                <div id="overview" class="container tab-pane active"><br>
-                    <!--******Slideshow-container START ******-->
-                    <div class="container" style="width:50%">
-                        <div class="slideshow-container">
+            <div class="tab-content" id="tab-content">
 
-                            <div class="mySlides active">
-                                <div class="numbertext">1 / 6</div>
-                                <img src="https://static.tildacdn.com/tild3637-3065-4366-b663-666130366238/SMS_2.png" style="width:100%">
-                            </div>
-
-                            <div class="mySlides">
-                                <div class="numbertext">2 / 6</div>
-                                <img src="https://static.tildacdn.com/tild3961-6339-4732-b431-643434626137/SMS_3.png" style="width:100%">
-                            </div>
-
-                            <div class="mySlides">
-                                <div class="numbertext">3 / 6</div>
-                                <img src="https://static.tildacdn.com/tild3033-6635-4263-a234-653937356564/SMS_4.png" style="width:100%">
-                            </div>
-
-                            <div class="mySlides">
-                                <div class="numbertext">4 / 6</div>
-                                <img src="https://static.tildacdn.com/tild6535-3964-4436-a434-353161303966/SMS_7.png" style="width:100%">
-                            </div>
-
-                            <div class="mySlides">
-                                <div class="numbertext">5 / 6</div>
-                                <img src="https://static.tildacdn.com/tild6533-3865-4463-a265-386430356230/SMS_6.png" style="width:100%">
-                            </div>
-
-                            <div class="mySlides">
-                                <div class="numbertext">6 / 6</div>
-                                <img src="https://static.tildacdn.com/tild3139-6134-4964-b761-663437616637/SMS_5.png" style="width:100%">
-                            </div>
-                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                        </div>
-                        <br>
-
-
-                    </div>
-                    <script>
-                        var slideIndex = 1;
-                        showSlides(slideIndex);
-
-                        function plusSlides(n) {
-                            showSlides(slideIndex += n);
-                        }
-
-                        function currentSlide(n) {
-                            showSlides(slideIndex = n);
-                        }
-
-                        function showSlides(n) {
-                            var i;
-                            var slides = document.getElementsByClassName("mySlides");
-                            var dots = document.getElementsByClassName("dot");
-                            if (n > slides.length) {
-                                slideIndex = 1
-                            }
-                            if (n < 1) {
-                                slideIndex = slides.length
-                            }
-                            for (i = 0; i < slides.length; i++) {
-                                slides[i].style.display = "none";
-                            }
-                            for (i = 0; i < dots.length; i++) {
-                                dots[i].className = dots[i].className.replace(" active", "");
-                            }
-                            slides[slideIndex - 1].style.display = "block";
-                            dots[slideIndex - 1].className += " active";
-                        }
-                    </script>
-
-                    <!--Sideshow container END-->
-                    <div class="container" style="width: 70%;">
-                        <div field="text" class="t-text t-text_md ">Send an SMS to your subscribers anywhere in the world when they place an order, make a purchase, or take other actions. Personalize text with names and other personal information. Verify and clean your databases using HLR Number
-                            Lookup. Pay only for what you use: from $0.01 to $0.06 per SMS, depending on the country.
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div id="businessCases" class="container tab-pane fade" style="width:50%;"><br>
-                    <h3>Business Cases</h3>
-                    <p>Send SMS and verify phone numbers before saving them.</p>
-                </div>
-                <div id="price" class="container tab-pane fade" style="width:50%;"><br>
-                    <h3>Price</h3>
-                    <div field="text" class="t-text t-text_md ">
-                        <ul>
-                            <li>Application is prepaid. </li>
-                            <li>Trial period is available.</li>
-                            <li><a href="https://www.messenger.com/t/vadim.ciobanu.7" target="_blank" style="color:rgb(30, 98, 242) !important;">Contact developer</a> to know more.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="guidelines" class="container tab-pane fade" style="width:50%;"><br>
-                    <h3>Guidelines</h3>
-                    <div field="text" class="t-text t-text_md ">1. Create an account on <a href="http://www.sms.to" target="_blank" style="color:rgb(30, 98, 242) !important;">www.sms.to</a> <br>2. Get your API key <br>3. Install app <br>4. Setup app, enter your API key <br>5.<a href="https://manychat.com/template/c9880697911c713611dd4ff4e02f9ae756d0830f/review"
-                            target="_blank" style="color:rgb(30, 98, 242) !important;"> Install templates</a></div>
-                </div>
-                <div id="author" class="container tab-pane fade" style="width:50%;"><br>
-                    <h3>Author</h3>
-                    <div id="rec217697205" class="r t-rec t-rec_pb_120 r_anim r_showed" style="padding-bottom: 120px;" data-record-type="106" data-connect-with-tab="yes" data-animationappear="off">
-                        <!-- T004 -->
-                        <div class="t004">
-                            <div class="t-container ">
-                                <div class="t-col t-col_8 t-prefix_2">
-                                    <div field="text" class="t-text t-text_md "><a href="mailto:cvadim88@gmail.com" style="color:rgb(30, 98, 242) !important;">Contact by e-mail</a><br><a href="https://www.messenger.com/t/vadim.ciobanu.7" target="_blank" style="color:rgb(30, 98, 242) !important;">Contact by Messenger</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="safety" class="container tab-pane fade" style="width:50%;"><br>
-                    <h3>Safety</h3>
-                    <div field="text" class="t-text t-text_md ">Before publishing app, ManyChat Review Team makes sure that: <br><br>
-                        <ol>
-                            <li> The app can be installed via installation link </li>
-                            <li> App settings capture enough information to make the app work </li>
-                            <li> All app actions are accessible inside flow builder </li>
-                            <li> App actions work in accordance with their title and description </li>
-                            <li> The app doesn't capture unnecessary data </li>
-                            <li> All external sources that impact the app's actions performance are configured properly
-                            </li>
-                        </ol>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -268,12 +138,34 @@
             $("#footer").load("footer.html");
         });
     </script>
+    <!-- tab function -->
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
 
-    <script type="text/javascript">
-        var btn = document.getElementById("businessCases");
-        btn.oncilck = Active();
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
     </script>
-
     <!-- Json loader and innerHTML Function -->
     <script>
         var settings = {
@@ -283,32 +175,47 @@
                 "Accept": "application/json"
             },
         };
-        $.ajax(settings).done(function(response) {
-                console.log(response);
-            })
+        $.ajax(settings).done(function(response) {})
             .then(function(data) {
-                console.log(data);
                 var text = "";
-                var i = 0;
-                var row = Math.ceil(data.data.length / 3); //calculate how many rows needed in each part
-                for (row; row > 0; row--) {
-                    console.log("inside")
-                    text += "<div class='row'>";
-                    for (k = 0; k < 3; k++) {
-                        if (i < data.data.length) {
-                            text += "<div class='col-12 col-md-4'><div class='single-special  wow fadeInUp' data-wow-delay='0.2s'><div class='single-icon'><img src='" + data.data[i].logo + "'data-original='" + data.data[i].url + "'class='t829__img t-img js-product-img loaded' imgfield='li_img__1521103691910'></div><h4>" + data.data[i].title + "</h4><p>" + data.data[i].intro + "</p><div class='learn-more-button d-none d-lg-block'><a href='' class='px-4'>Learn More</a></div></div>"
-                            i++;
-                            console.log("inside")
-                        }
-                        text += "</div>";
+                //overview
+                text += "<div id='overview' class='container tab-pane active'><br><div class='container' style='width:50%'><div class='slideshow-container'>"
+                    //image slides
+                for (k = 0; k < data.data.app_meta.images.length; k++) {
+                    if (k == 0) {
+                        text += " <div class='mySlides active'><div class='numbertext'>" + (k + 1) + " / " + data.data.app_meta.images.length + "</div><img src='" + data.data.app_meta.images[k].url + "' style='width:100%'></div>"
+                    } else {
+                        text += " <div class='mySlides'><div class='numbertext'>" + (k + 1) + " / " + data.data.app_meta.images.length + "</div><img src='" + data.data.app_meta.images[k].url + "' style='width:100%'></div>"
                     }
-                    $(document).ready(function() {
-                        $("#card").html(text)
-                    });
                 }
+                //button on slides
+                text += "<a class='prev' onclick='plusSlides(-1)'>&#10094;</a><a class='next' onclick='plusSlides(1)'>&#10095;</a>";
+                text += "</div><br></div>";
+                //overview text
+                text += "<div class='container' style='width: 70%;'><div field='text' class='t-text t-text_md '>" + data.data.app_meta.overview + "</div></div></div>";
+
+                //businessCases
+                text += "<div id='businessCases' class='container tab-pane fade' style='width:50%;'><br><h3>Business Cases</h3><p>" + data.data.intro + "</p></div>";
+
+                //price
+                text += "<div id='price' class='container tab-pane fade' style='width:50%;'><br><h3>Price</h3><div field='text' class='t-text t-text_md '><ul><li>Application is prepaid. </li><li>Trial period is available.</li><li><a href='" + data.data.app_meta.email + "' target='_blank' style='color:rgb(30, 98, 242) !important;'>Contact developer</a> to know more.</li></ul></div></div>"
+
+                //guidelines
+                text += "<div id='guidelines' class='container tab-pane fade' style='width:50%;'><br><h3>Guidelines</h3><iframe width='100%' src='" + data.data.app_meta.videos[0].url + "'></iframe><div field='text' class='t-text t-text_md '>" + data.data.app_meta.guidelines + "</div></div>"
+
+                //author
+                text += " <div id='author' class='container tab-pane fade' style='width:50%;'><br><h3>Author</h3><p>" + data.data.app_meta.author + "</p><p>" + data.data.app_meta.email + "</p></div>"
+
+                //safety
+                text += "<div id='safety' class='container tab-pane fade' style='width:50%;'><br><h3>Safety</h3><div field='text' class='t-text t-text_md '>Before publishing app, Uchat Review Team makes sure that: <br><br><ol><li> The app can be installed via installation link </li> <li> App settings capture enough information to make the app work </li><li> All app actions are accessible inside flow builder </li><li> App actions work in accordance with their title and description </li><li> The app doesn't capture unnecessary data </li><li> All external sources that impact the app's actions performance are configured properly </li></ol></div></div>";
+
+                $(document).ready(function() {
+                    console.log(text)
+                    $("#tab-content").html(text)
+                });
+
             });
     </script>
-
 </body>
 
 </html>
