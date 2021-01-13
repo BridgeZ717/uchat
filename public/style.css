@@ -1474,6 +1474,20 @@ p {
     margin-top: 25px;
 }
 
+.learn-more-button>a:hover {
+    color: #fff;
+    background-color: #5b32b4;
+    font-weight: 500;
+    display: inline-block;
+    border: 2px solid #a883e9;
+    height: 50px;
+    min-width: 120px;
+    line-height: 46px;
+    text-align: center;
+    border-radius: 0px 24px 24px 24px;
+    margin-top: 25px;
+}
+
 
 /* --------------------------
 :: 16.0 features Page CSS Start
