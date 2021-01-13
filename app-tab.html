@@ -52,6 +52,7 @@
             <div class="section-heading text-center">
                 <h2>Send SMS</h2>
                 <div class="line-shape"></div>
+                <div class='install-button d-none d-lg-block'><a href='' class='px-4'>Install App</a></div>
             </div>
             <br>
             <!-- Nav pills -->
@@ -156,9 +157,7 @@
                 text += "<div id='overview' class='container tab-pane active'><br><div class='container' style='width:50%'><div class='slideshow-container'>"
                     //image slides
                 for (k = 0; k < data.data.app_meta.images.length; k++) {
-
                     text += " <div class='mySlides'><div class='numbertext'>" + (k + 1) + " / " + data.data.app_meta.images.length + "</div><img src='" + data.data.app_meta.images[k].url + "' style='width:100%'></div>"
-
                 }
                 //button on slides
                 text += "<a class='prev' onclick='plusSlides(-1)'>&#10094;</a><a class='next' onclick='plusSlides(1)'>&#10095;</a>";
@@ -186,10 +185,12 @@
 
                 //safety
                 text += "<div id='safety' class='container tab-pane fade' style='width:50%;'><br><h3>Safety</h3><div field='text' class='t-text t-text_md '>Before publishing app, Uchat Review Team makes sure that: <br><br><ol><li> The app can be installed via installation link </li> <li> App settings capture enough information to make the app work </li><li> All app actions are accessible inside flow builder </li><li> App actions work in accordance with their title and description </li><li> The app doesn't capture unnecessary data </li><li> All external sources that impact the app's actions performance are configured properly </li></ol></div></div>";
-                console.log(text)
+
                 $(document).ready(function() {
                     $("#tab-content").html(text)
                 });
+                var slideIndex = 1;
+                showSlides(slideIndex);
 
             });
     </script>
