@@ -138,6 +138,63 @@
             $("#footer").load("footer.html");
         });
     </script>
+
+    <!-- Json loader and innerHTML Function -->
+    <script>
+        var settings = {
+            "url": "https://www.uchat.com.au/apps/info/8",
+            "method": "POST",
+            "headers": {
+                "Accept": "application/json"
+            },
+        };
+        $.ajax(settings).done(function(response) {})
+            .then(function(data) {
+                console.log(data)
+                var text = "";
+                //overview
+                text += "<div id='overview' class='container tab-pane active'><br><div class='container' style='width:50%'><div class='slideshow-container'>"
+                    //image slides
+                for (k = 0; k < data.data.app_meta.images.length; k++) {
+                    if (k == 0) {
+                        text += " <div class='mySlides active'><div class='numbertext'>" + (k + 1) + " / " + data.data.app_meta.images.length + "</div><img src='" + data.data.app_meta.images[k].url + "' style='width:100%'></div>"
+                    } else {
+                        text += " <div class='mySlides'><div class='numbertext'>" + (k + 1) + " / " + data.data.app_meta.images.length + "</div><img src='" + data.data.app_meta.images[k].url + "' style='width:100%'></div>"
+                    }
+                }
+                //button on slides
+                text += "<a class='prev' onclick='plusSlides(-1)'>&#10094;</a><a class='next' onclick='plusSlides(1)'>&#10095;</a>";
+                text += "</div><br></div>";
+                //overview text
+                text += "<div class='container' style='width: 70%;'><div field='text' class='t-text t-text_md '>" + data.data.app_meta.overview + "</div></div></div>";
+
+                //businessCases
+                text += "<div id='businessCases' class='container tab-pane fade' style='width:50%;'><br><h3>Business Cases</h3><p>" + data.data.intro + "</p></div>";
+
+                //price
+                text += "<div id='price' class='container tab-pane fade' style='width:50%;'><br><h3>Price</h3><div field='text' class='t-text t-text_md '><ul><li>Application is prepaid. </li><li>Trial period is available.</li><li><a href='" + data.data.app_meta.email + "' target='_blank' style='color:rgb(30, 98, 242) !important;'>Contact developer</a> to know more.</li></ul></div></div>"
+
+                //guidelines
+                var videoAdd = "";
+                if (data.data.app_meta.videos != undefined) {
+                    for (var i = 0; i < data.data.app_meta.videos.length; i++) {
+                        var index = data.data.app_meta.videos[i].url.indexOf('=');
+                        videoAdd = "https://www.youtube.com/embed/" + data.data.app_meta.videos[i].url.substring(index + 1);
+                        text += "<div id='guidelines' class='container tab-pane fade' style='width:100%;'><br><h3>Guidelines</h3><iframe id='app-tab-video' src='" + videoAdd + "'frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen'></iframe><div field='text' class='t-text t-text_md>" + data.data.app_meta.guidelines + "</div></div>"
+                    }
+                }
+                //author
+                text += " <div id='author' class='container tab-pane fade' style='width:50%;'><br><h3>Author</h3><p>" + data.data.app_meta.author + "</p><p>" + data.data.app_meta.email + "</p></div>"
+
+                //safety
+                text += "<div id='safety' class='container tab-pane fade' style='width:50%;'><br><h3>Safety</h3><div field='text' class='t-text t-text_md '>Before publishing app, Uchat Review Team makes sure that: <br><br><ol><li> The app can be installed via installation link </li> <li> App settings capture enough information to make the app work </li><li> All app actions are accessible inside flow builder </li><li> App actions work in accordance with their title and description </li><li> The app doesn't capture unnecessary data </li><li> All external sources that impact the app's actions performance are configured properly </li></ol></div></div>";
+
+                $(document).ready(function() {
+                    $("#tab-content").html(text)
+                });
+
+            });
+    </script>
     <!-- tab function -->
     <script>
         var slideIndex = 1;
@@ -165,56 +222,6 @@
             }
             slides[slideIndex - 1].style.display = "block";
         }
-    </script>
-    <!-- Json loader and innerHTML Function -->
-    <script>
-        var settings = {
-            "url": "https://www.uchat.com.au/apps/info/8",
-            "method": "POST",
-            "headers": {
-                "Accept": "application/json"
-            },
-        };
-        $.ajax(settings).done(function(response) {})
-            .then(function(data) {
-                var text = "";
-                //overview
-                text += "<div id='overview' class='container tab-pane active'><br><div class='container' style='width:50%'><div class='slideshow-container'>"
-                    //image slides
-                for (k = 0; k < data.data.app_meta.images.length; k++) {
-                    if (k == 0) {
-                        text += " <div class='mySlides active'><div class='numbertext'>" + (k + 1) + " / " + data.data.app_meta.images.length + "</div><img src='" + data.data.app_meta.images[k].url + "' style='width:100%'></div>"
-                    } else {
-                        text += " <div class='mySlides'><div class='numbertext'>" + (k + 1) + " / " + data.data.app_meta.images.length + "</div><img src='" + data.data.app_meta.images[k].url + "' style='width:100%'></div>"
-                    }
-                }
-                //button on slides
-                text += "<a class='prev' onclick='plusSlides(-1)'>&#10094;</a><a class='next' onclick='plusSlides(1)'>&#10095;</a>";
-                text += "</div><br></div>";
-                //overview text
-                text += "<div class='container' style='width: 70%;'><div field='text' class='t-text t-text_md '>" + data.data.app_meta.overview + "</div></div></div>";
-
-                //businessCases
-                text += "<div id='businessCases' class='container tab-pane fade' style='width:50%;'><br><h3>Business Cases</h3><p>" + data.data.intro + "</p></div>";
-
-                //price
-                text += "<div id='price' class='container tab-pane fade' style='width:50%;'><br><h3>Price</h3><div field='text' class='t-text t-text_md '><ul><li>Application is prepaid. </li><li>Trial period is available.</li><li><a href='" + data.data.app_meta.email + "' target='_blank' style='color:rgb(30, 98, 242) !important;'>Contact developer</a> to know more.</li></ul></div></div>"
-
-                //guidelines
-                text += "<div id='guidelines' class='container tab-pane fade' style='width:50%;'><br><h3>Guidelines</h3><iframe width='100%' src='" + data.data.app_meta.videos[0].url + "'></iframe><div field='text' class='t-text t-text_md '>" + data.data.app_meta.guidelines + "</div></div>"
-
-                //author
-                text += " <div id='author' class='container tab-pane fade' style='width:50%;'><br><h3>Author</h3><p>" + data.data.app_meta.author + "</p><p>" + data.data.app_meta.email + "</p></div>"
-
-                //safety
-                text += "<div id='safety' class='container tab-pane fade' style='width:50%;'><br><h3>Safety</h3><div field='text' class='t-text t-text_md '>Before publishing app, Uchat Review Team makes sure that: <br><br><ol><li> The app can be installed via installation link </li> <li> App settings capture enough information to make the app work </li><li> All app actions are accessible inside flow builder </li><li> App actions work in accordance with their title and description </li><li> The app doesn't capture unnecessary data </li><li> All external sources that impact the app's actions performance are configured properly </li></ol></div></div>";
-
-                $(document).ready(function() {
-                    console.log(text)
-                    $("#tab-content").html(text)
-                });
-
-            });
     </script>
 </body>
 
