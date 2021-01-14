@@ -1,5 +1,5 @@
 [{
-        "title": "WechatTemplate",
+        "title": "Wechat Template",
         "img": "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
         "install": "https://www.uchat.com.au/install-template/hqpwghjoopaerlmshxbadgvrfrzaghay",
         "viewMore": "https://www.uchat.com.au/template/hqpwghjoopaerlmshxbadgvrfrzaghay"
@@ -21,5 +21,9 @@
         "img": "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "install": "https://www.uchat.com.au/install-template/hl37dqztruqixbi5l1chsioqglugrhja",
         "viewMore": "https://www.uchat.com.au/template/hl37dqztruqixbi5l1chsioqglugrhja"
+    },
+    {
+        "title": "Voice Demo",
+        "img": "https://images.pexels.com/photos/5717263/pexels-photo-5717263.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
     }
 ]
