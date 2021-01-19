@@ -57,7 +57,7 @@
 
     <!-- ***** Special Area Start ***** -->
     <section class="special-area bg-white section_padding_100" id="about">
-        <div class="container" id="card">
+        <div class="container" id="TemplateCard">
         </div>
     </section>
     <!-- ***** Special Area End ***** -->
@@ -105,14 +105,37 @@
             .then(function(data) {
                 $.getJSON("public/json/templates.json", function(result) {
                     console.log(data);
+
+                    //data sort by type
+                    data.data.sort(function(a, b) {
+                        if (a.type < b.type) {
+                            return -1;
+                        }
+                        if (a.type > b.type) {
+                            return 1;
+                        }
+                        return 0;
+                    })
+
+                    //inner html start
                     imgJson = result
                     var text = "";
                     var imgJson;
                     var i = 0;
+
+                    //side bar start
+                    text += '<div class="row">';
+                    text += '<div class="col-12 col-lg-2"><div class="container"><div id="mySidenav" class="sidenav"><ul>';
+                    for (var y = 0; y < data.data.length; y++) {
+                        if ((y == 0) || data.data[y].type != data.data[y - 1].type)
+                            text += '<li class="side-categories"> <a href="#' + data.data[y].id + '">' + data.data[y].type.toUpperCase() + '</a></li>';
+
+                    }
+                    text += "</ul></div></div></div>";
+
+                    //card start
                     var row = Math.ceil(data.data.length / 3); //calculate how many rows needed in each part
-
-                    console.log(imgJson);
-
+                    text += '<div class="col-12 col-lg-10">';
                     for (row; row > 0; row--) {
                         text += "<div class='row'>";
                         for (k = 0; k < 3; k++) {
@@ -121,7 +144,7 @@
                                 var image = "";
                                 var index = data.data[i].url.lastIndexOf('/');
                                 install = "https://www.uchat.com.au/install-template/" + data.data[i].url.substring(index + 1);
-                                text += "<div class='col-12 col-md-4'><div class='single-team-member wow fadeInUp' data-wow-delay='0.2s'><div class='member-image'><img src='";
+                                text += "<div class='col-12 col-md-4'><div class='single-team-member wow fadeInUp' data-wow-delay='0.2s' id='" + data.data[i].id + "'><div class='member-image'><img src='";
                                 //change Image Start
                                 for (var j = 0; j < imgJson.length; j++) {
                                     if (imgJson[j].title == data.data[i].name) {
@@ -139,8 +162,9 @@
                         }
                         text += "</div>";
                     }
+                    text += "</div></div>";
                     $(document).ready(function() {
-                        $("#card").html(text)
+                        $("#TemplateCard").html(text)
                     });
                 });
             });

@@ -29,6 +29,7 @@
 :: 17.0 FAQ CSS Start
 :: 18.0 Video CSS Start
 :: 19.0 AppTab CSS Start
+:: 20.0 side bar CSS Start 
 -------------------------- */
 
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,500,700|Montserrat:400,500,700');
@@ -1731,5 +1732,72 @@ img {
     .next,
     .text {
         font-size: 11px
+    }
+}
+
+
+/* -------------------------- 
+:: 20.0 side bar CSS Start 
+-------------------------- */
+
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    /* position: fixed; /* Stay in place */
+    z-index: 0;
+    /* Stay on
+top */
+    top: 1;
+    left: 0;
+    background-color: #111;
+    /* Black*/
+    overflow-x: visible;
+    /* Disable horizontal scroll */
+    padding-top: 0px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+
+/* The
+navigation menu links */
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #5B32B4;
+    display: block;
+    transition: 0.3s;
+}
+
+
+/* When you mouse over the navigation links, change their color */
+
+.sidenav a:hover {
+    color: #fb397d;
+}
+
+.side-categories {
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.side-categories-inner {
+    white-space: nowrap;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
     }
 }
