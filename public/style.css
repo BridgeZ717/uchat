@@ -30,6 +30,7 @@
 :: 18.0 Video CSS Start
 :: 19.0 AppTab CSS Start
 :: 20.0 side bar CSS Start 
+:: 21.0 Pagination CSS Start
 -------------------------- */
 
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,500,700|Montserrat:400,500,700');
@@ -1800,4 +1801,34 @@ navigation menu links */
     .sidenav a {
         font-size: 18px;
     }
+}
+
+
+/* -------------------------- 
+:: 21.0 Pagination CSS Start
+-------------------------- */
+
+.pagination {
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.pagination a {
+    color: #5b32b5;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.pagination a.active {
+    border-radius: 5px;
+    color: white;
+    background-color: #fb397d;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
 }
