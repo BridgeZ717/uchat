@@ -62,9 +62,7 @@
         <!-- pagination Start-->
 
         <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#" class="active">1</a>
-            <a href="#">&raquo;</a>
+
         </div>
 
     </section>
@@ -128,6 +126,7 @@
                     //inner html start
                     imgJson = result
                     var text = "";
+                    var paginationText = "";
                     var imgJson;
                     var i = 0;
 
@@ -143,39 +142,71 @@
 
                     //card start
                     var row = Math.ceil(data.data.length / 3); //calculate how many rows needed in each part
+                    var rowPerPage = 1;
+                    var page = Math.ceil(row / rowPerPage);
                     text += '<div class="col-12 col-lg-10">';
-                    for (row; row > 0; row--) {
-                        text += "<div class='row'>";
-                        for (k = 0; k < 3; k++) {
-                            if (i < data.data.length) {
-                                var install = "";
-                                var image = "";
-                                var index = data.data[i].url.lastIndexOf('/');
-                                install = "https://www.uchat.com.au/install-template/" + data.data[i].url.substring(index + 1);
-                                text += "<div class='col-12 col-md-4'><div class='single-team-member wow fadeInUp' data-wow-delay='0.2s' id='" + data.data[i].id + "'><div class='member-image'><img src='";
-                                //change Image Start
-                                for (var j = 0; j < imgJson.length; j++) {
-                                    if (imgJson[j].title == data.data[i].name) {
-                                        image = imgJson[j].img;
+                    for (p = 1; p <= page; p++) {
+                        text += "<div class = 'page' id='" + p + "'>";
+                        for (row, r = 1; 0 < row && r <= rowPerPage; r++, row--) {
+                            text += "<div class='row'>";
+                            for (k = 0; k < 3; k++) {
+                                if (i < data.data.length) {
+                                    var install = "";
+                                    var image = "";
+                                    var index = data.data[i].url.lastIndexOf('/');
+                                    install = "https://www.uchat.com.au/install-template/" + data.data[i].url.substring(index + 1);
+                                    text += "<div class='col-12 col-md-4'><div class='single-team-member wow fadeInUp' data-wow-delay='0.2s' id='" + data.data[i].id + "'><div class='member-image'><img src='";
+                                    //change Image Start
+                                    for (var j = 0; j < imgJson.length; j++) {
+                                        if (imgJson[j].title == data.data[i].name) {
+                                            image = imgJson[j].img;
+                                        }
                                     }
+                                    if (image == "") {
+                                        image = data.data[i].image;
+                                    }
+                                    text += image;
+                                    //change Image End
+                                    text += "' alt='' class='border'><div class='team-hover-effects'><div class='team-social-icon'><div><a href='" + install + "' class='w-100 btn btn-primary d-block'>Install Template</a><a href='" + data.data[i].url + "' class='w-100 btn btn-primary d-block mt-2'>View More</a></div></div></div></div><div class='member-text'><h5><a href='" + data.data[i].url + "'>" + data.data[i].name + "</a></h5><p>" + data.data[i].description + "</p></div></div></div>"
+                                    i++;
                                 }
-                                if (image == "") {
-                                    image = data.data[i].image;
-                                }
-                                text += image;
-                                //change Image End
-                                text += "' alt='' class='border'><div class='team-hover-effects'><div class='team-social-icon'><div><a href='" + install + "' class='w-100 btn btn-primary d-block'>Install Template</a><a href='" + data.data[i].url + "' class='w-100 btn btn-primary d-block mt-2'>View More</a></div></div></div></div><div class='member-text'><h5><a href='" + data.data[i].url + "'>" + data.data[i].name + "</a></h5><p>" + data.data[i].description + "</p></div></div></div>"
-                                i++;
                             }
+                            text += "</div>";
+
+
                         }
-                        text += "</div>";
+                        text += "</div>"
                     }
+
+
                     text += "</div></div>";
+                    //pagination start
+                    //paginationText += '<a href="#">&laquo;</a>'
+
+                    for (var q = 1; q <= page; q++) {
+                        paginationText += '<a href="#" id="page' + q + 'btn" onclick="changePage(' + q + ')">' + q + '</a>'
+                    }
+
+                    //paginationText += '<a href="#">&raquo;</a>';
+                    //pagination end
+
+
                     $(document).ready(function() {
-                        $("#TemplateCard").html(text)
+                        $("#TemplateCard").html(text);
+                        $(".pagination").html(paginationText);
+                        $(".page").hide();
+                        $("#1").show();
+                        $("#page1btn").addClass("active");
                     });
                 });
             });
+
+        function changePage(pageNum) {
+            $(".page").hide();
+            $(".active").removeClass();
+            $("#" + pageNum).show();
+            $("#page" + pageNum + "btn").addClass("active")
+        }
     </script>
 </body>
 
